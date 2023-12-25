@@ -1,0 +1,19 @@
+/* AddNoteForm.css */
+.add-note-form {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 10px; /* Border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+/* .add-note-form input,
+.add-note-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+} */
+
+/* .add-note-form button {
+  width: 100%;
+} */

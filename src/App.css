@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+/* App.css */
+
+body{
+  background-color: #E3E8F8;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  display: flex;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.col-md-3 {
+  width: 20%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  width: 100%;
+  margin: auto;
+  color: white;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.btn-nav{
   color: white;
+  background-color: #203562;
+  display: inline;
+  pointer-events: none;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar h1 {
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row{
+  height: 100vh;
+}
+
+.main-content {
+  /* flex: 1; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-note,
+.preview-notes {
+  margin-bottom: 20px;
+}
+
+.add-note input,
+.add-note textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.add-note input,
+.add-note textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+textarea, input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.logo{
+  margin: 2px;
+  display: inline;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.add-note-form {
+  width: 100%;
+}
+
+
+.notes-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.note {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 5px;
+  flex: 1 0 calc(33.33% - 10px);
+  max-width: calc(33.33% - 10px);
 }
