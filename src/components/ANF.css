@@ -1,19 +1,27 @@
-/* AddNoteForm.css */
+/* ANF.css */
+
 .add-note-form {
   width: 100%;
   margin: auto;
   padding: 20px;
-  border: 1px solid #ccc; /* Border color */
-  border-radius: 10px; /* Border radius */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* .add-note-form input,
+.add-note-form input,
 .add-note-form textarea {
   width: 100%;
   margin-bottom: 10px;
-} */
+}
 
-/* .add-note-form button {
+.add-note-form button {
   width: 100%;
-} */
+  color: white;
+  background-color: #203562;
+  border: none;
+}
+
+.add-note-form button:hover{
+  background-color: #0e224d;
+}

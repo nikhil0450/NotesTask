@@ -1,8 +1,7 @@
-// PreviewNotes.js
 import React, { useState } from "react";
 import { useNotes } from "../context/NotesContext";
-
 import logo from '../description.png';
+
 const PreviewNotes = () => {
   const { notes, deleteNote, updateNote } = useNotes();
   const [editingNote, setEditingNote] = useState(null);
@@ -31,7 +30,7 @@ const PreviewNotes = () => {
   return (
     <div className="preview-notes mt-4">
       <div className="d-flex align-items-center mb-3">
-      <img src={logo} alt="Logo" className="logo" />&nbsp;
+        <img src={logo} alt="Logo" className="logo" />&nbsp;
         <h2 className="mb-0">My Notes</h2>
       </div>
       {notes.length === 0 ? (
@@ -39,7 +38,7 @@ const PreviewNotes = () => {
       ) : (
         <div className="d-flex flex-wrap">
           {notes.map((note) => (
-  <div className="card m-2" key={note.id} style={{ width: "200px" }}>
+            <div className="card m-2 note-card" key={note.id}>
               <div className="card-body">
                 {editingNote === note.id ? (
                   <>
@@ -71,12 +70,7 @@ const PreviewNotes = () => {
                   </>
                 )}
               </div>
-              <div
-                className="card-footer"
-                style={{
-    "margin": "auto",
-    "width": "100%",
-    "textAlign": "center"}}>
+              <div className="card-footer text-center">
                 {editingNote === note.id ? (
                   <>
                     <button
