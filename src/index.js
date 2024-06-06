@@ -1,14 +1,11 @@
-// index.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-import { NotesProvider } from './context/NotesContext';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./components/App.js"; // Adjust the import to your app's entry point
+const container = document.getElementById("root");
+const root = createRoot(container);
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
-    <NotesProvider>
-      <App />
-    </NotesProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <App />
+  </React.StrictMode>
 );

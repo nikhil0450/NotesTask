@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNotes } from "../context/NotesContext";
+import Linkify from "react-linkify";
 import logo from '../description.png';
 
 const PreviewNotes = () => {
@@ -27,18 +28,27 @@ const PreviewNotes = () => {
     setEditedNote({ title: "", description: "" });
   };
 
+  const formatTextWithLineBreaks = (text) => {
+    return text.split('\n').map((item, key) => (
+      <span key={key}>
+        {item}
+        <br />
+      </span>
+    ));
+  };
+
   return (
     <div className="preview-notes mt-4">
       <div className="d-flex align-items-center mb-3">
-        <img src={logo} alt="Logo" className="logo" />&nbsp;
+        <img src={logo} alt="Logo" className="logo" />
         <h2 className="mb-0">My Notes</h2>
       </div>
       {notes.length === 0 ? (
         <p>No notes available. Add a new note to get started.</p>
       ) : (
-        <div className="d-flex flex-wrap">
+        <div className="notes-list">
           {notes.map((note) => (
-            <div className="card m-2 note-card" key={note.id}>
+            <div className="card m-2 note" key={note.id}>
               <div className="card-body">
                 {editingNote === note.id ? (
                   <>
@@ -66,38 +76,28 @@ const PreviewNotes = () => {
                 ) : (
                   <>
                     <h5 className="card-title">{note.title}</h5>
-                    <p className="card-text">{note.description}</p>
+                    <p className="card-text">
+                    <Linkify>{formatTextWithLineBreaks(note.description)}</Linkify>
+                    </p>
                   </>
                 )}
               </div>
-              <div className="card-footer text-center">
+              <div className="card-footer">
                 {editingNote === note.id ? (
                   <>
-                    <button
-                      className="btn btn-success btn-sm me-2"
-                      onClick={handleSaveEdit}
-                    >
+                    <button className="btn btn-success btn-sm me-2" onClick={handleSaveEdit}>
                       <i className="fas fa-check"></i> Save
                     </button>
-                    <button
-                      className="btn btn-secondary btn-sm"
-                      onClick={handleCancelEdit}
-                    >
+                    <button className="btn btn-secondary btn-sm" onClick={handleCancelEdit}>
                       <i className="fas fa-times"></i> Cancel
                     </button>
                   </>
                 ) : (
                   <>
-                    <button
-                      className="btn btn-sm me-2"
-                      onClick={() => handleEditNote(note)}
-                    >
+                    <button className="btn btn-sm me-2" onClick={() => handleEditNote(note)}>
                       <i className="fas fa-pencil-alt"></i>
                     </button>
-                    <button
-                      className="btn btn-sm"
-                      onClick={() => handleDeleteNote(note.id)}
-                    >
+                    <button className="btn btn-sm" onClick={() => handleDeleteNote(note.id)}>
                       <i className="fas fa-trash-alt"></i>
                     </button>
                   </>
@@ -112,3 +112,4 @@ const PreviewNotes = () => {
 };
 
 export default PreviewNotes;
+
