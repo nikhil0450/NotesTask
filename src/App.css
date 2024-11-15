@@ -115,10 +115,12 @@ body {
 
   .row {
     flex-direction: column;
+    width:100%;
   }
 
   .col-md-3 {
     width: 100%;
+    height: fit-content;
     max-width: none;
     flex: none;
     justify-content: center;
